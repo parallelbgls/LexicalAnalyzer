@@ -1,0 +1,77 @@
+1 program -> compoundstmt
+6 compoundstmt -> { stmts }
+7 stmts -> stmt stmts 
+8 stmts -> $end
+3 stmt -> whilestmt 
+10 whilestmt -> while ( boolexpr ) stmt
+5 stmt -> compoundstmt
+6 compoundstmt -> { stmts }
+7 stmts -> stmt stmts 
+7 stmts -> stmt stmts 
+8 stmts -> $end
+4 stmt -> assgstmt 
+11 assgstmt -> identifier = arithexpr ;
+18 arithexpr -> multexpr arithexprprime
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+27 simpleexpr -> intnumber 
+2 stmt -> ifstmt 
+9 ifstmt -> if ( boolexpr ) then stmt else stmt
+5 stmt -> compoundstmt
+6 compoundstmt -> { stmts }
+7 stmts -> stmt stmts 
+8 stmts -> $end
+4 stmt -> assgstmt 
+11 assgstmt -> identifier = arithexpr ;
+18 arithexpr -> multexpr arithexprprime
+20 arithexprprime -> - multexpr arithexprprime 
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+27 simpleexpr -> intnumber 
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+26 simpleexpr -> identifier 
+5 stmt -> compoundstmt
+6 compoundstmt -> { stmts }
+7 stmts -> stmt stmts 
+8 stmts -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+26 simpleexpr -> identifier 
+4 stmt -> assgstmt 
+11 assgstmt -> identifier = arithexpr ;
+18 arithexpr -> multexpr arithexprprime
+20 arithexprprime -> - multexpr arithexprprime 
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+27 simpleexpr -> intnumber 
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+26 simpleexpr -> identifier 
+12 boolexpr -> arithexpr boolop arithexpr
+18 arithexpr -> multexpr arithexprprime
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+27 simpleexpr -> intnumber 
+17 boolop -> ==
+18 arithexpr -> multexpr arithexprprime
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+26 simpleexpr -> identifier 
+12 boolexpr -> arithexpr boolop arithexpr
+18 arithexpr -> multexpr arithexprprime
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+27 simpleexpr -> intnumber 
+15 boolop -> <= 
+18 arithexpr -> multexpr arithexprprime
+21 arithexprprime -> $end
+22 multexpr -> simpleexpr multexprprime
+25 multexprprime -> $end
+26 simpleexpr -> identifier 

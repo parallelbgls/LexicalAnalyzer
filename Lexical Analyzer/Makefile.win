@@ -1,0 +1,43 @@
+# Project: Lexical Analyzer
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Analyser.o DFA.o DoubleStack.o Expression.o Main.o Tree.o
+LINKOBJ  = Analyser.o DFA.o DoubleStack.o Expression.o Main.o Tree.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Lexical Analyzer.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Analyser.o: Analyser.cpp
+	$(CPP) -c Analyser.cpp -o Analyser.o $(CXXFLAGS)
+
+DFA.o: DFA.cpp
+	$(CPP) -c DFA.cpp -o DFA.o $(CXXFLAGS)
+
+DoubleStack.o: DoubleStack.cpp
+	$(CPP) -c DoubleStack.cpp -o DoubleStack.o $(CXXFLAGS)
+
+Expression.o: Expression.cpp
+	$(CPP) -c Expression.cpp -o Expression.o $(CXXFLAGS)
+
+Main.o: Main.cpp
+	$(CPP) -c Main.cpp -o Main.o $(CXXFLAGS)
+
+Tree.o: Tree.cpp
+	$(CPP) -c Tree.cpp -o Tree.o $(CXXFLAGS)

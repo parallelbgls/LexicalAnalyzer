@@ -1,0 +1,25 @@
+//正则表达式书写规范 word ::= expression,expression不能有空格
+Letter:
+letter ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+digit ::= 0|1|2|3|4|5|6|7|8|9
+
+GrabLetter:
+delimiter ::= \(|\)|{|}|;
+comment ::= //
+
+UnGrabLetter:
+operator ::= +|-|\*|/|=|==|<|<=|>|>=|!=
+
+Expression:
+//*,|,&,$,(,)作为字母，前面加上\
+keyword ::= int|real|if|then|else|while
+
+//引用前面的表达式，用(\\表达式名称)表示
+intnumber ::= (\\digit)(\\digit)*
+//$表示空
+exponent ::= E(+|-|$)(\\intnumber)
+fraction ::= .(\\intnumber)
+realnumber ::= (\\intnumber)(\\exponent)|(\\intnumber)(\\fraction)((\\exponent)|$)
+
+identifier ::= (\\letter)((\\letter)|(\\digit))*
+

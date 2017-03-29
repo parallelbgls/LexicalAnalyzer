@@ -1,0 +1,14 @@
+program -> compoundstmt
+stmt -> ifstmt | whilestmt | assgstmt | compoundstmt
+compoundstmt -> { stmts }
+stmts -> stmt stmts | $end
+ifstmt -> if ( boolexpr ) then stmt else stmt
+whilestmt -> while ( boolexpr ) stmt
+assgstmt -> identifier = arithexpr ;
+boolexpr -> arithexpr boolop arithexpr
+boolop -> < | > | <= | >= | ==
+arithexpr -> multexpr arithexprprime
+arithexprprime -> + multexpr arithexprprime | - multexpr arithexprprime | $end
+multexpr -> simpleexpr multexprprime
+multexprprime -> * simpleexpr multexprprime | / simpleexpr multexprprime | $end
+simpleexpr -> identifier | intnumber | realnumber | ( arithexpr )
